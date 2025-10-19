@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Cadastro</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2> Formulário de Cadastro</h2>
+    <form th:object="${novaTarefa}" method="POST" action="/cadastrar">
+
+        <div class="mb-3">
+            <div class="mb-3"><input class="form-control" type="text" id="nomeTarefa" name="nome" placeholder="Nome da Tarefa" th:field="*{nomeTarefas}"> </div>
+            <div class="mb-3"> <input class="form-control" type="text" id="descricao" name="descricao" placeholder="Descricao" th:field="*{descricao}"> </div>
+            <div class="mb-3"><input class="form-control" type="text" id="responsavel" name="responsavel" placeholder="Responsavel" th:field="*{responsavel}"> </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+</div>
+
+</body>
+</html>
